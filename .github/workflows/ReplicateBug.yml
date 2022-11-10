@@ -36,4 +36,4 @@ jobs:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do  kill -USR1 $!; sleep 10; done
+          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do echo "Trying to hot restart" ; kill -SIGUSR1 $!; sleep 10; done
