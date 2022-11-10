@@ -32,4 +32,4 @@ jobs:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          script: flutter run lib/main.dart & sleep 10; kill -SIGUSR1 $!
+          script: flutter run lib/main.dart & sleep 120; kill -SIGUSR1 $! ; sleep 10 ; kill $1
