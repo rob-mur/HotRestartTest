@@ -26,10 +26,13 @@ jobs:
       - name: Restore packages
         run: flutter pub get
 
+      - name: Doctor
+        run: flutter doctor -v
+
       - name: Run it
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          script: flutter run lib/main.dart & sleep 120; kill -SIGUSR1 $! ; sleep 10 ; kill $1
+          script: flutter run lib/main.dart & sleep 300; kill -16 $! ; sleep 10 ; kill $1
