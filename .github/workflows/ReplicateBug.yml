@@ -29,8 +29,6 @@ jobs:
       - name: Doctor
         run: flutter doctor -v
 
-      - name: Check SIGUSR1
-        run: cat /usr/include/asm/signal.h
 
       - name: Run it
         uses: reactivecircus/android-emulator-runner@v2
