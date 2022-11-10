@@ -38,4 +38,4 @@ jobs:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do  kill -s 10 $!; sleep 10; done ;
+          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do  kill -s 10 $!; sleep 10; done
