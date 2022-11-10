@@ -35,4 +35,4 @@ jobs:
           api-level: 29
           arch: x86_64
           profile: Nexus 6
-          script: echo "r" |  flutter run lib/main.dart
+          script: flutter run lib/main.dart --pid-file pid & sleep 400; for run in {1..10}; do echo "Trying to hot restart" ; kill -USR1 $(cat pid); sleep 10; done
