@@ -29,13 +29,10 @@ jobs:
       - name: Doctor
         run: flutter doctor -v
 
-      - name: Get Sigs
-        run: kill -l
-
-#      - name: Run it
-#        uses: reactivecircus/android-emulator-runner@v2
-#        with:
-#          api-level: 29
-#          arch: x86_64
-#          profile: Nexus 6
-#          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do echo "Trying to hot restart" ; kill -10 $!; sleep 10; done
+      - name: Run it
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          profile: Nexus 6
+          script: flutter run lib/main.dart & sleep 300; for run in {1..10}; do echo "Trying to hot restart" ; kill -10 $!; sleep 10; done
