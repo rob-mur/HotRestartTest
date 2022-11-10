@@ -13,23 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
 
-  steps:
+    steps:
 
-    - name: Checkout the code
-      uses: actions/checkout@v2
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
-    - name: Install and set Flutter version
-      uses: subosito/flutter-action@v2
-      with:
-        channel: 'stable'
+      - name: Install and set Flutter version
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
 
-    - name: Restore packages
-      run: flutter pub get
+      - name: Restore packages
+        run: flutter pub get
 
-    - name: Run it
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-        api-level: 29
-        arch: x86_64
-        profile: Nexus 6
-        script: flutter run lib/main.dart & sleep 10; kill $!
+      - name: Run it
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          arch: x86_64
+          profile: Nexus 6
+          script: flutter run lib/main.dart & sleep 10; kill -SIGUSR1 $!
